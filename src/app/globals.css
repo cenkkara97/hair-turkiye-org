@@ -1,26 +1,221 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fbff;
+  --foreground: #1a3950;
+  --muted: #6f8698;
+  --border: rgba(128, 175, 208, 0.32);
+  --brand-navy: #1f5071;
+  --brand-navy-2: #2c678d;
+  --brand-gold: #4fa8d7;
+  --brand-gold-2: #8fd5f3;
+  --brand-cream: #eaf5fc;
+  --brand-ink: #29506a;
+  --data-panel-border: #c8d9ef;
+  --data-panel-divider: #d6e3f4;
+  --data-title: #244b77;
+  --data-body: #294f78;
+  --data-muted: #4b6586;
+  --data-price: #2a4d79;
+  --data-caption: #3f5f85;
+  --data-bar-turkey: #2b5ec3;
+  --data-bar-turkey-from: #3577f6;
+  --data-bar-turkey-to: #1f56c4;
+  --data-bar-default: #98a7bb;
+  --data-bar-default-from: #aeb9c8;
+  --data-bar-default-to: #8d9caf;
+  --data-callout-border: #8db2e8;
+  --data-callout-bg: #eef5ff;
+  --data-accent: #1f56c4;
+  --data-ring-track: rgb(79 168 215 / 0.22);
+  --data-ring-fill: #1f5071;
+  --data-ring-track-strong: #dbe7fb;
+  --data-ring-fill-strong: #2f67d8;
+  --data-emphasis: #1f4f9f;
+  --data-chip-border: #9dc0ef;
+  --data-chip-bg: #f0f6ff;
+  --data-heading-alt: #274f7b;
+  --data-icon-bg: #e8f1ff;
+  --data-bottom-start: #08254d;
+  --data-bottom-mid: #0b2d5a;
+  --data-bottom-end: #103a6f;
+  --data-bottom-icon: #88aee7;
+  --data-bottom-text: #d7e6ff;
+  --data-bottom-callout-border: #4d75b0;
+  --data-bottom-callout-bg: #0b2b56;
+  --data-bottom-callout-text: #7fb0ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-2: var(--brand-navy-2);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-2: var(--brand-gold-2);
+  --color-brand-muted: var(--muted);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-ink: var(--brand-ink);
+  --color-data-panel-border: var(--data-panel-border);
+  --color-data-panel-divider: var(--data-panel-divider);
+  --color-data-title: var(--data-title);
+  --color-data-body: var(--data-body);
+  --color-data-muted: var(--data-muted);
+  --color-data-price: var(--data-price);
+  --color-data-caption: var(--data-caption);
+  --color-data-bar-turkey: var(--data-bar-turkey);
+  --color-data-bar-turkey-from: var(--data-bar-turkey-from);
+  --color-data-bar-turkey-to: var(--data-bar-turkey-to);
+  --color-data-bar-default: var(--data-bar-default);
+  --color-data-bar-default-from: var(--data-bar-default-from);
+  --color-data-bar-default-to: var(--data-bar-default-to);
+  --color-data-callout-border: var(--data-callout-border);
+  --color-data-callout-bg: var(--data-callout-bg);
+  --color-data-accent: var(--data-accent);
+  --color-data-ring-track: var(--data-ring-track);
+  --color-data-ring-fill: var(--data-ring-fill);
+  --color-data-ring-track-strong: var(--data-ring-track-strong);
+  --color-data-ring-fill-strong: var(--data-ring-fill-strong);
+  --color-data-emphasis: var(--data-emphasis);
+  --color-data-chip-border: var(--data-chip-border);
+  --color-data-chip-bg: var(--data-chip-bg);
+  --color-data-heading-alt: var(--data-heading-alt);
+  --color-data-icon-bg: var(--data-icon-bg);
+  --color-data-bottom-start: var(--data-bottom-start);
+  --color-data-bottom-mid: var(--data-bottom-mid);
+  --color-data-bottom-end: var(--data-bottom-end);
+  --color-data-bottom-icon: var(--data-bottom-icon);
+  --color-data-bottom-text: var(--data-bottom-text);
+  --color-data-bottom-callout-border: var(--data-bottom-callout-border);
+  --color-data-bottom-callout-bg: var(--data-bottom-callout-bg);
+  --color-data-bottom-callout-text: var(--data-bottom-callout-text);
+  --shadow-data-inset: inset 0 1px 0 rgb(255 255 255 / 0.3);
+  --font-sans: var(--font-general-sans), "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-mono: Consolas, "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-general-sans), "Segoe UI", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-container {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    padding-inline: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Animation utilities */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-navy);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
