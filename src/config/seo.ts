@@ -23,6 +23,16 @@ export function createPageMetadata({
     alternates: {
       canonical: canonicalUrl,
     },
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: {
+        index: false,
+        follow: false,
+        noimageindex: true,
+      },
+    },
     openGraph: {
       title: `${title} | ${siteConfig.name}`,
       description,
