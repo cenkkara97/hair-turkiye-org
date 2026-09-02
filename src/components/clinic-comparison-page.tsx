@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { BadgeCheck, CalendarDays, Database, FileCheck2 } from "lucide-react";
 
 type ScoreBar = {
   label: string;
@@ -23,12 +24,14 @@ type Clinic = {
   cons: string;
   tags: string[];
   bars: ScoreBar[];
+  profileHref?: string;
 };
 
 const clinics: Clinic[] = [
   {
     rankLabel: "#1 Ranked Clinic",
     rank: 1,
+    profileHref: "/clinics/dr-serkan-aygin",
     name: "Dr. Serkan Aygin Clinic",
     subtitle: "Istanbul - Dr. Serkan Aygin - Founded 1996",
     summary:
@@ -232,9 +235,9 @@ const faqs = [
 ] as const;
 
 const actionPrimaryClassName =
-  "rounded-full bg-cyan-700 px-5 py-3 text-sm font-extrabold text-white shadow-[0_18px_35px_rgba(14,116,144,0.2)] transition-transform hover:-translate-y-0.5";
+  "rounded-full bg-cyan-300 px-5 py-3 text-sm font-extrabold text-[#082f49] shadow-[0_18px_35px_rgba(34,211,238,0.16)] transition-transform hover:-translate-y-0.5 hover:bg-white";
 const actionSecondaryClassName =
-  "rounded-full border border-cyan-700/20 bg-white px-5 py-3 text-sm font-extrabold text-cyan-700 transition-transform hover:-translate-y-0.5";
+  "rounded-full border border-white/20 bg-white/[0.07] px-5 py-3 text-sm font-extrabold text-white transition-transform hover:-translate-y-0.5 hover:bg-white/12";
 const metricCardClassName = "rounded-2xl border border-cyan-100 bg-cyan-50 p-4";
 const metricCardCompactClassName = "rounded-2xl border border-cyan-100 bg-cyan-50 p-3 text-center";
 const metricValueClassName = "block text-base font-extrabold text-cyan-700 sm:text-lg";
@@ -271,17 +274,23 @@ export function ClinicComparisonPage() {
   const selectedClinic = useMemo(() => clinics[selectedIndex], [selectedIndex]);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.20),transparent_32%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.14),transparent_35%),#f7fbfd]">
-      <section className="site-container py-12 sm:py-16">
-        <div className="mb-8 grid gap-6 rounded-3xl border border-cyan-900/10 bg-white/80 p-5 shadow-[0_30px_90px_rgba(9,47,53,0.12)] backdrop-blur-sm sm:p-8 lg:grid-cols-[1fr_360px]">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.20),transparent_32%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.14),transparent_35%),#f7fbfd]">
+      <section className="relative overflow-hidden border-b border-cyan-200/15 bg-[#082f49] py-12 text-white sm:py-16 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(79,168,215,0.32),transparent_29%),radial-gradient(circle_at_4%_88%,rgba(143,213,243,0.13),transparent_28%)]" aria-hidden="true" />
+        <div className="site-container relative">
+        <div className="grid gap-8 lg:grid-cols-[1fr_390px] lg:items-end lg:gap-14">
           <div>
-            <span className="mb-4 inline-flex rounded-full bg-cyan-100 px-4 py-2 text-xs font-extrabold uppercase tracking-wide text-cyan-700 sm:text-sm">
-              2026 Editorial Snapshot
+            <nav aria-label="Breadcrumb" className="mb-8 text-xs font-semibold text-cyan-100/70">
+              <Link href="/" className="hover:text-white">Home</Link> <span className="mx-2">/</span> <span className="text-white">Clinic Comparison</span>
+            </nav>
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-cyan-200">
+              <Database className="size-4" aria-hidden="true" />
+              2026 comparison framework
             </span>
-            <h1 className="text-3xl font-bold leading-tight tracking-tight text-[#092f35] sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.07] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
               Best Hair Transplant Clinics in Turkey
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-cyan-50/72 sm:text-lg">
               Explore a practical ranking view built around doctor oversight, accreditation, review credibility, and patient-fit tradeoffs.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -300,22 +309,22 @@ export function ClinicComparisonPage() {
             </div>
           </div>
 
-          <article className="rounded-3xl border border-cyan-700/15 bg-white p-5 sm:p-6">
+          <article className="rounded-3xl border border-white/15 bg-white/[0.09] p-5 shadow-2xl shadow-slate-950/15 backdrop-blur sm:p-6">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div className="grid place-items-center rounded-2xl bg-cyan-700 text-lg font-black text-white size-12 sm:size-14 sm:text-xl">
                 #1
               </div>
-              <div className="text-right text-2xl font-black text-cyan-700 sm:text-3xl">
+              <div className="text-right text-2xl font-black text-cyan-200 sm:text-3xl">
                 5.0
-                <span className="block text-xs font-bold text-slate-500">
+                <span className="block text-xs font-bold text-cyan-50/55">
                   editorial score
                 </span>
               </div>
             </div>
-            <h2 className="text-2xl font-bold tracking-tight text-[#092f35] sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Dr. Serkan Aygin Clinic
             </h2>
-            <p className="mt-3 text-sm leading-7 text-slate-600">
+            <p className="mt-3 text-sm leading-7 text-cyan-50/68">
               Best overall for institutional quality, patient operations, and broad public trust signals.
             </p>
             <div className="mt-5 grid grid-cols-3 gap-2.5">
@@ -339,6 +348,12 @@ export function ClinicComparisonPage() {
               </div>
             </div>
           </article>
+        </div>
+        <div className="mt-8 grid gap-3 border-t border-white/12 pt-6 text-xs text-cyan-50/65 sm:grid-cols-3">
+          <span className="flex items-center gap-2"><FileCheck2 className="size-4 text-cyan-300" aria-hidden="true" /> Sample clinic data</span>
+          <span className="flex items-center gap-2"><CalendarDays className="size-4 text-cyan-300" aria-hidden="true" /> Final review before launch</span>
+          <span className="flex items-center gap-2"><BadgeCheck className="size-4 text-cyan-300" aria-hidden="true" /> Evidence status shown per claim</span>
+        </div>
         </div>
       </section>
 
@@ -456,6 +471,11 @@ export function ClinicComparisonPage() {
                 <p className="text-sm leading-6 text-slate-600">{selectedClinic.cons}</p>
               </div>
             </div>
+            {selectedClinic.profileHref ? (
+              <Link href={selectedClinic.profileHref} className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-cyan-700 px-5 py-3 text-sm font-extrabold text-white transition hover:bg-[#082f49]">
+                View full clinic profile
+              </Link>
+            ) : null}
           </aside>
         </div>
       </section>
@@ -537,6 +557,6 @@ export function ClinicComparisonPage() {
           <strong>Methodology note:</strong> Review counts, awards, accreditations, and clinic claims should be updated regularly. This page is an editorial comparison layout and should be paired with verified source links before publishing.
         </div>
       </section>
-    </main>
+    </div>
   );
 }

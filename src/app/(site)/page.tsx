@@ -4,16 +4,15 @@ import {
   HeroSection,
   HonestRealitySection,
   ClinicFinderSection,
-  ServicesSection,
   VerificationGuideSection,
-  TransparencySection,
   SourcesSection,
 } from "@/components/home-sections";
+import { ExploreGuideSection, MethodologyPreviewSection } from "@/components/home-editorial-sections";
 import { createPageMetadata } from "@/config/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Hair Transplant Turkey Guide",
-  description: "Independent, evidence-based hair transplant guide for Turkey: costs, safety checks, clinic research, and patient FAQ.",
+  description: "Evidence-led hair transplant guide for Turkey: costs, safety checks, clinic research, and patient FAQ.",
   path: "/",
   keywords: [
     "hair transplant turkey",
@@ -29,11 +28,11 @@ export default function HomePage() {
     <>
       <HeroSection />
       <HairTransplantStatsSection />
+      <ExploreGuideSection />
       <ClinicFinderSection />
       <HonestRealitySection />
-      <ServicesSection />
+      <MethodologyPreviewSection />
       <VerificationGuideSection />
-      <TransparencySection />
       <SourcesSection />
     </>
   );

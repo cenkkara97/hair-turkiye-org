@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    locale: "tr_TR",
+    locale: "en_GB",
     type: "website",
     images: [
       {
@@ -73,7 +73,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="tr" className={`${generalSans.variable} h-full antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${generalSans.variable} h-full antialiased`}>
       <body className="min-h-full bg-background text-foreground">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         {children}

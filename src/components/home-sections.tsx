@@ -101,8 +101,8 @@ const safetyItems = [
 const bottomItems = [
   {
     icon: ShieldCheck,
-    title: "100% Independent",
-    text: "No ties to any clinic",
+    title: "Research Framework",
+    text: "Consistent clinic criteria",
   },
   {
     icon: Stethoscope,
@@ -266,7 +266,7 @@ const sources = [
   {
     name: "NPR Health Journalism",
     url: "npr.org",
-    description: "Independent health journalism",
+    description: "Health journalism and patient safety",
   },
 ] as const;
 
@@ -361,7 +361,7 @@ export function HeroSection() {
             <div className="max-w-2xl animate-fade-in-left">
               <p className="mb-5 inline-flex items-center gap-3 text-xs uppercase tracking-widest text-brand-navy animate-pulse-slow">
                 <span className="h-px w-8 bg-brand-gold" />
-                Independent Patient Resource
+                Patient Research Guide
               </p>
               <h1 className="font-sans text-3xl font-bold leading-tight text-brand-navy sm:text-4xl md:text-5xl">
                 Clear Hair Transplant Data for Turkey
@@ -897,14 +897,12 @@ export function SourcesSection() {
 
           <div className="mt-7 border-t border-data-panel-border pt-7 text-center sm:mt-8 sm:pt-8">
             <p className="mb-4 text-xs text-brand-muted sm:text-sm">
-              <strong>How we are funded:</strong> HairTurkey Guide is funded entirely through individual donations 
-              and foundation grants. We do not accept advertising, clinic sponsorships, referral fees, or affiliate 
-              commissions of any kind. No clinic has paid us or provided any benefit in exchange for mention on this website.
+              <strong>Research status:</strong> Clinic details, source records and methodology notes will be reviewed
+              before the website is opened to search engines. Dates and evidence labels will be shown with the final content.
             </p>
             <p className="text-xs text-brand-muted">
-              This website does not represent any clinic or commercial entity. Our content cites only peer-reviewed 
-              research, official government data, and established medical societies. We do not cite clinic websites, 
-              sponsored blogs, or commercial sources.
+              Medical information will prioritise peer-reviewed research, official institutions and established medical
+              societies. Clinic-provided details will be clearly separated from independently verifiable facts.
             </p>
           </div>
         </div>

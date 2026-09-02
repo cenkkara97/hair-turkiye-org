@@ -10,8 +10,8 @@ export function SiteFooter() {
             Hair<span className="text-brand-gold">Turkiye</span>.org
           </p>
           <p className="mt-4 max-w-md text-sm leading-7 text-brand-muted">
-            Independent patient information resource. Not affiliated with any clinic or medical
-            tourism agency.
+            Patient-first information, practical travel guidance and structured clinic comparisons
+            for people researching hair restoration in Turkey.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-3 md:col-span-2">

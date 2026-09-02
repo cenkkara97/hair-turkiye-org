@@ -12,9 +12,9 @@ export type FooterLinkGroup = {
 
 export const siteConfig = {
   name: "HairTurkiye.org",
-  description: "Independent hair transplant information and clinic guide",
+  description: "Hair transplant information and clinic comparison guide for Turkey",
   url: "https://hairturkiye.org",
-  topBannerText: "Independent resource. No paid clinic rankings.",
+  topBannerText: "Research-led guides for international patients.",
   nav: [
     {
       href: "/hair-transplant",
@@ -22,14 +22,24 @@ export const siteConfig = {
       showCaret: true,
       children: [
         { href: "/hair-transplant", label: "What is Hair Transplant?" },
-        { href: "/hair-transplant", label: "FUE Technique" },
-        { href: "/hair-transplant", label: "DHI Technique" },
-        { href: "/hair-transplant", label: "Sapphire FUE" },
-        { href: "/hair-transplant", label: "Who is a Candidate?" },
-        { href: "/hair-transplant", label: "Before and After" },
+        { href: "/hair-transplant/fue", label: "FUE Technique" },
+        { href: "/hair-transplant/dhi", label: "DHI Technique" },
+        { href: "/hair-transplant/sapphire-fue", label: "Sapphire FUE" },
+        { href: "/hair-transplant/candidate", label: "Who is a Candidate?" },
+        { href: "/hair-transplant/before-after", label: "Before and After" },
       ],
     },
-    { href: "/why-turkey", label: "Why Turkey" },
+    {
+      href: "/why-turkey",
+      label: "Why Turkey",
+      showCaret: true,
+      children: [
+        { href: "/why-turkey", label: "Why Choose Turkey?" },
+        { href: "/why-turkey/cost", label: "Cost Guide" },
+        { href: "/why-turkey/medical-standards", label: "Medical Standards" },
+        { href: "/why-turkey/travel-process", label: "Travel Process" },
+      ],
+    },
     { href: "/clinics", label: "Clinic Comparison" },
     { href: "/clinic-checklist", label: "Patient Guide" },
     { href: "/faq", label: "FAQ" },
@@ -39,17 +49,17 @@ export const siteConfig = {
     {
       title: "Hair Transplant",
       links: [
-        { href: "/hair-transplant", label: "FUE Technique" },
-        { href: "/hair-transplant", label: "DHI Technique" },
-        { href: "/hair-transplant", label: "Sapphire FUE" },
+        { href: "/hair-transplant/fue", label: "FUE Technique" },
+        { href: "/hair-transplant/dhi", label: "DHI Technique" },
+        { href: "/hair-transplant/sapphire-fue", label: "Sapphire FUE" },
       ],
     },
     {
       title: "Why Turkey",
       links: [
-        { href: "/why-turkey", label: "Cost Comparison" },
-        { href: "/why-turkey", label: "Medical Standards" },
-        { href: "/clinic-checklist", label: "Travel Process" },
+        { href: "/why-turkey/cost", label: "Cost Comparison" },
+        { href: "/why-turkey/medical-standards", label: "Medical Standards" },
+        { href: "/why-turkey/travel-process", label: "Travel Process" },
       ],
     },
     {
@@ -58,6 +68,7 @@ export const siteConfig = {
         { href: "/clinics", label: "Clinic Directory" },
         { href: "/faq", label: "FAQ Library" },
         { href: "/about", label: "About This Site" },
+        { href: "/contact", label: "Contact" },
       ],
     },
   ] as FooterLinkGroup[],

@@ -25,26 +25,30 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-brand-ink transition hover:bg-brand-gold/10 hover:text-brand-gold ${
-                      item.children ? "group-hover:bg-brand-gold/10 group-hover:text-brand-gold" : ""
+                      item.children
+                        ? "group-hover:bg-brand-gold/10 group-hover:text-brand-gold group-focus-within:bg-brand-gold/10 group-focus-within:text-brand-gold"
+                        : ""
                     }`}
                   >
                     <span>{item.label}</span>
                     {item.showCaret ? <ChevronDown className="size-3.5" aria-hidden="true" /> : null}
                   </Link>
                   {item.children ? (
-                    <div className="invisible absolute left-0 top-full z-30 mt-2 min-w-64 rounded-xl border border-brand-gold/25 bg-white p-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
-                      <ul className="space-y-1 py-1">
-                        {item.children.map((child) => (
-                          <li key={`${item.label}-${child.label}`}>
-                            <Link
-                              href={child.href}
-                              className="block rounded-md px-4 py-2.5 text-sm text-brand-ink transition hover:bg-brand-cream hover:text-brand-navy"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="invisible absolute left-0 top-full z-30 min-w-64 pt-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <div className="rounded-xl border border-brand-gold/25 bg-white p-2 shadow-lg">
+                        <ul className="space-y-1 py-1">
+                          {item.children.map((child) => (
+                            <li key={`${item.label}-${child.label}`}>
+                              <Link
+                                href={child.href}
+                                className="block rounded-md px-4 py-2.5 text-sm text-brand-ink transition hover:bg-brand-cream hover:text-brand-navy"
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   ) : null}
                 </li>
@@ -52,7 +56,7 @@ export function SiteHeader() {
             </ul>
           </nav>
           <Link
-            href="/faq"
+            href="/clinic-checklist"
             className="hidden items-center justify-center rounded-md border border-brand-gold bg-brand-gold px-5 py-2.5 text-base font-semibold leading-tight text-white transition hover:bg-brand-navy-2 md:inline-flex"
           >
             Free Guide
@@ -100,7 +104,7 @@ export function SiteHeader() {
                 ))}
                 <li className="pt-2">
                   <Link
-                    href="/faq"
+                    href="/clinic-checklist"
                     className="block rounded-md border border-brand-gold bg-brand-gold px-3 py-2 text-center font-semibold text-white transition hover:bg-brand-navy-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
