@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     images: ["/images/hero.webp"],
   },
   robots: {
-    index: true,
-    follow: true,
-    nocache: true,
+    index: false,
+    follow: false,
+    nocache: false,
     googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
+      index: false,
+      follow: false,
+      noimageindex: false,
     },
   },
 };
